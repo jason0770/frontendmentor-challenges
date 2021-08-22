@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsla(228, 53%, 61%, 0.603); }
+
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("images/pattern-background-desktop.svg");
+      background-repeat: repeat-x;
+      background-color: hsla(225, 46%, 65%, 0.705); 
+      height: 800px;
+    }
+
+    .order-wrapper {
+      border-radius: 10px;
+      /* below helps make the border-radius working with the background-image */
+      overflow: hidden; 
+      background-color: white;
+      width: 400px;
+      height: 600px;
+    }
+
+    .order-header img {
+      width: 400px;
+    }
+
+    .order-content h3{
+      text-align: center;
+    }
+
+    .order-content p {
+      padding-left: 40px;
+      padding-right: 40px;
+      text-align: center;
+      margin-top: -10px;
+    }
+
+    .order-category-section {
+      background-color: rgba(218, 222, 233, 0.253);
+      margin-left: 40px;
+      margin-right: 40px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .order-category {
+      flex-grow: 2;
+      margin-left: 10px;
+      margin-right: 10px;
+      align-self: center;
+    }
+
+    .order-category-section a {
+      align-self: center;
+      color: blue;
+    }
+
+    .order-category-section img {
+      align-self: center;
+    }
+
+    .words-color {
+      color: rgb(148, 156, 161);
+    }
+
+    .order-buttons {
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .order-button1 {
+      background-color: rgb(45, 0, 128);
+      color:white;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 5px 15px rgba(128, 128, 128, 0.144);
+
+    }
+
+    .order-button2 {
+      padding: 10px;
+      border: none;
+      background-color: transparent;
+    }
+
+    @media only screen and (max-width:500px) {
+      body {
+        background-image: url("images/pattern-background-mobile.svg");
+      }
+
+      .order-category-section {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .order-header img {
+        width: 300px;
+      }
+
+      .order-wrapper {
+        width: 300px;
+        height: 520px;
+      }
+
+      .order-buttons {
+        width: 280px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="order-wrapper">
+    <div class="order-header">
+      <img src="images/illustration-hero.svg" alt="">
+    </div>
+    <div class="order-content">
+      <h3>Order Summary</h3>
+      <p class="words-color">
+        You can now listen to millions of songs, audiobooks, and podcasts on any 
+        device anywhere you like!
+      </p>
+
+      <div class="order-category-section">
+        <img src="images/icon-music.svg">
+        <div class="order-category">
+          <strong>Annual Plan</strong>
+          <span class="words-color">$59.99/year</span>
+        </div>
+        <a href="">Change</a>
+      </div>
+
+      <div class="order-buttons">
+        <button class="order-button1">Proceed to Payment</button>
+        <button class="order-button2 words-color">Cancel Order</button>
+      </div>
+    
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Jason Lai</a>.
+    </div>
+  </div>
+</body>
+</html>
