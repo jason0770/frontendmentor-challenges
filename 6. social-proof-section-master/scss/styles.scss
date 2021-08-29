@@ -1,0 +1,292 @@
+$very-dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+* {
+    // --very-dark-magenta: hsl(300, 43%, 22%);
+    // --soft-pink: hsl(333, 80%, 67%);
+    // --dark-grayish-magenta: hsl(303, 10%, 53%);
+    // --light-grayish-magenta: hsl(300, 24%, 96%);
+    // --white: hsl(0, 0%, 100%);
+    font-family: "Spartan", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin commentItem($gridColumnStart, $gridColumnEnd, $marginTop) {
+    grid-column-start: $gridColumnStart;
+    grid-column-end: $gridColumnEnd;
+    align-self: center;
+    margin-top: $marginTop;
+    width: 18rem;
+    height: 10rem;
+    padding: 2rem;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    height: 100vh;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.social-proof {
+    &__container {
+        background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: -10rem 1rem, 33rem bottom;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 2rem;
+        
+        &--color-white {
+            background-color: $white;
+        } 
+    }
+
+    &__item-1 {
+        grid-column: 1 / 4;
+        align-self: center;
+        background-color: transparent;
+        
+
+        h1 {
+            color: $very-dark-magenta;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-right: 5rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            margin-right: 6rem;
+            color: $dark-grayish-magenta;
+        }
+    }
+
+    &__item-2 {
+        grid-column: 4 / 7;
+        align-self: center;
+        background-color: transparent;
+    }
+
+    &__item-3 {
+        @include commentItem(1, 3, 0);
+        &--color-very-dark-magenta {
+            background-color: $very-dark-magenta;
+        }
+
+        &--round {
+            border-radius: .5rem;
+        }
+    }
+
+    &__item-4 {
+        @include commentItem(3, 5, 3rem);
+        &--color-very-dark-magenta {
+            background-color: $very-dark-magenta;
+        }
+
+        &--round {
+            border-radius: .5rem;
+        }
+    }
+
+    &__item-5 {
+        @include commentItem(5, 7, 6rem);
+        &--color-very-dark-magenta {
+            background-color: $very-dark-magenta;
+        }
+
+        &--round {
+            border-radius: .5rem;
+        }
+    }
+
+    &__rates {
+        background-color: $light-grayish-magenta;
+        padding: 1rem 1.15rem 1rem 1rem;
+        margin-bottom: 0.5rem;
+        width: 23rem;
+        border-radius: 0.5rem;
+        color: $very-dark-magenta;
+    }  
+
+    &__rate-1 {        
+        margin-left: 0rem;
+    }
+
+    &__rate-2 {
+        margin-left: 3rem;
+    }
+
+    &__rate-3 {
+        margin-left: 6rem;
+    }
+
+    &__rate-images {
+        position: relative;
+        top: 0.15rem;
+        margin-right: 2rem;
+    }
+
+    &__buyer-image {
+        width: 3rem;
+        &--round {
+            border-radius: 5rem;
+        }
+    }
+
+    &__buyer-info-container {
+        display: flex;
+
+    }
+
+    &__buyer-information {
+        align-self: flex-start;
+        margin-left: 2rem;
+        .buyer-information {       
+            &__name {
+                &--color-dark-grayish-magenta{
+                    color:$dark-grayish-magenta;
+                }
+            }
+
+            &__status {
+                &--color-soft-pink {
+                    color:$soft-pink;
+                }
+            }
+        }
+    }
+
+    &__comment {
+        margin-top: 2rem;
+        &--color-dark-grayish-magenta {
+            color: $light-grayish-magenta
+        }
+    }
+
+    @media screen and (max-width:1000px) {
+
+        &__rates {
+            width: 15rem;
+            text-align: center;
+        }  
+
+        &__rate-images {
+            display: block;
+            text-align: center;
+        }
+
+
+        &__item-3, &__item-4, &__item-5{
+            width: fit-content;
+            height: fit-content;
+        }
+
+        &__buyer-image {
+            width: 3rem;
+            height: 3rem;
+        }
+
+    }
+
+    @media screen and (max-width:750px) {
+        &__item-1 {
+            grid-column: 1 / 5;
+
+            h1 {
+                color: $very-dark-magenta;
+            }
+    
+            p {
+                margin-top: 0.5rem;
+            }
+        }
+    
+        &__item-2 {
+            grid-column: 5 / 7;
+            align-self: center;
+            background-color: $white;
+        }
+
+        &__rates {
+            background-color: $light-grayish-magenta;
+            width: auto;
+        }  
+    
+        &__rate-1 {        
+            margin-left: 0rem;
+        }
+    
+        &__rate-2 {
+            margin-left: 0rem;
+        }
+    
+        &__rate-3 {
+            margin-left: 0rem;
+        }
+
+        &__rate-images {
+            margin-right: 0;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        &__container {
+            background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+            background-position: left top, left bottom;
+            display: block;
+        }
+
+
+        &__item-1 {
+            margin-bottom: 1rem;
+            text-align: center;
+
+            h1 {
+                margin-right: 0;
+            }
+    
+            p {
+                margin-right: 0rem;
+            }
+        }
+
+        &__item-3, &__item-4, &__item-5{
+            margin-top: 2rem;
+        }
+
+        
+    }
+
+}
+@media screen and (max-width: 600px) {
+
+    body {
+        display: block;
+        height: unset;
+    }
+
+    
+}

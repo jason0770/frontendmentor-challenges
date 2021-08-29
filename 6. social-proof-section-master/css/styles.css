@@ -1,0 +1,305 @@
+* {
+  font-family: "Spartan", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+body {
+  height: 100vh;
+  max-width: 70rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.social-proof__container {
+  background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: -10rem 1rem, 33rem bottom;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+.social-proof__container--color-white {
+  background-color: white;
+}
+
+.social-proof__item-1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: transparent;
+}
+
+.social-proof__item-1 h1 {
+  color: #502050;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-right: 5rem;
+}
+
+.social-proof__item-1 p {
+  margin-top: 0.5rem;
+  margin-right: 6rem;
+  color: #937b92;
+}
+
+.social-proof__item-2 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4 / 7;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: transparent;
+}
+
+.social-proof__item-3 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 0;
+  width: 18rem;
+  height: 10rem;
+  padding: 2rem;
+}
+
+.social-proof__item-3--color-very-dark-magenta {
+  background-color: #502050;
+}
+
+.social-proof__item-3--round {
+  border-radius: .5rem;
+}
+
+.social-proof__item-4 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 5;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 3rem;
+  width: 18rem;
+  height: 10rem;
+  padding: 2rem;
+}
+
+.social-proof__item-4--color-very-dark-magenta {
+  background-color: #502050;
+}
+
+.social-proof__item-4--round {
+  border-radius: .5rem;
+}
+
+.social-proof__item-5 {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 7;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 6rem;
+  width: 18rem;
+  height: 10rem;
+  padding: 2rem;
+}
+
+.social-proof__item-5--color-very-dark-magenta {
+  background-color: #502050;
+}
+
+.social-proof__item-5--round {
+  border-radius: .5rem;
+}
+
+.social-proof__rates {
+  background-color: #f7f2f7;
+  padding: 1rem 1.15rem 1rem 1rem;
+  margin-bottom: 0.5rem;
+  width: 23rem;
+  border-radius: 0.5rem;
+  color: #502050;
+}
+
+.social-proof__rate-1 {
+  margin-left: 0rem;
+}
+
+.social-proof__rate-2 {
+  margin-left: 3rem;
+}
+
+.social-proof__rate-3 {
+  margin-left: 6rem;
+}
+
+.social-proof__rate-images {
+  position: relative;
+  top: 0.15rem;
+  margin-right: 2rem;
+}
+
+.social-proof__buyer-image {
+  width: 3rem;
+}
+
+.social-proof__buyer-image--round {
+  border-radius: 5rem;
+}
+
+.social-proof__buyer-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.social-proof__buyer-information {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 2rem;
+}
+
+.social-proof__buyer-information .buyer-information__name--color-dark-grayish-magenta {
+  color: #937b92;
+}
+
+.social-proof__buyer-information .buyer-information__status--color-soft-pink {
+  color: #ee68a4;
+}
+
+.social-proof__comment {
+  margin-top: 2rem;
+}
+
+.social-proof__comment--color-dark-grayish-magenta {
+  color: #f7f2f7;
+}
+
+@media screen and (max-width: 1000px) {
+  .social-proof__rates {
+    width: 15rem;
+    text-align: center;
+  }
+  .social-proof__rate-images {
+    display: block;
+    text-align: center;
+  }
+  .social-proof__item-3, .social-proof__item-4, .social-proof__item-5 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .social-proof__buyer-image {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .social-proof__item-1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+  }
+  .social-proof__item-1 h1 {
+    color: #502050;
+  }
+  .social-proof__item-1 p {
+    margin-top: 0.5rem;
+  }
+  .social-proof__item-2 {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-column: 5 / 7;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background-color: white;
+  }
+  .social-proof__rates {
+    background-color: #f7f2f7;
+    width: auto;
+  }
+  .social-proof__rate-1 {
+    margin-left: 0rem;
+  }
+  .social-proof__rate-2 {
+    margin-left: 0rem;
+  }
+  .social-proof__rate-3 {
+    margin-left: 0rem;
+  }
+  .social-proof__rate-images {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social-proof__container {
+    background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+    background-position: left top, left bottom;
+    display: block;
+  }
+  .social-proof__item-1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .social-proof__item-1 h1 {
+    margin-right: 0;
+  }
+  .social-proof__item-1 p {
+    margin-right: 0rem;
+  }
+  .social-proof__item-3, .social-proof__item-4, .social-proof__item-5 {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    display: block;
+    height: unset;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
