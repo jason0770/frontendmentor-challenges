@@ -1,0 +1,199 @@
+$veryDarkGrayishBlue: hsl(217, 19%, 35%);
+$desaturatedDarkBlue: hsl(214, 17%, 51%);
+$grayishBlue: hsl(212, 23%, 69%);
+$lightGrayishBlue: hsl(210, 46%, 95%);
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Manrope, sans-serif;
+    font-size: 13px;
+}
+
+body {
+    background-color: $grayishBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh
+}
+
+.card {
+    display: grid;
+    background-color: $lightGrayishBlue;
+    grid-template-columns: repeat(100, 1fr);
+    border-radius: 2.5rem;
+    width: 55rem;
+
+    &__main-image {
+        z-index: 2;
+        grid-column: 1 / 48;
+        width: 100%;
+        border-top-left-radius: 2.5rem;
+        border-bottom-left-radius: 2.5rem;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__body {
+        background-color: $lightGrayishBlue;
+        height: 100%;
+        z-index: 3;
+        grid-column: 48 / 101;
+        padding: 2rem;
+        margin-left: -10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top-right-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+
+        p {
+            color: $grayishBlue;
+        }
+    }
+
+    &__footer {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+
+
+        .card__footer-image {
+            width: 3rem;
+            height: auto;           
+            &--round {
+                border-radius: 7rem;
+            }
+        }
+
+        .card__footer-body {
+            justify-self: left;
+            width: 70%;
+
+            .card__post-date--color {
+                color: $grayishBlue;
+            }
+        }
+
+        .card__share-icon {
+            background-color: $grayishBlue;
+            border-radius: 1rem;
+            padding: 0.55rem 0.5rem 0.55rem 0.5rem;
+            &:hover {
+                cursor: pointer;
+                background-color: $desaturatedDarkBlue;
+            }
+            &:active {
+                background-color: $veryDarkGrayishBlue;
+            }
+        }
+
+        .card__hidden-block {
+            display: none;
+            right: -5.1rem;
+            top: -3.5rem;
+            position: absolute;
+            .card__share-block {
+                display: flex;
+                justify-content: space-around;
+                background-color: $veryDarkGrayishBlue;
+                width: fit-content;
+                color: $desaturatedDarkBlue;
+                padding: 0.8rem 1rem 0.5rem 1rem;
+                border-radius: 0.5rem;
+                text-transform: uppercase;
+                
+                .space {
+                    display: block;
+                    width: 1rem;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 5.5rem;
+                    top: 2rem;
+                    background-color: $veryDarkGrayishBlue;
+                    width: 10%;
+                    height: 50%;
+                    transform: rotate(45deg);
+                    z-index: -2;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width:800px) {
+
+    .card {
+        display: block;
+        height: unset;
+        width: 24.5rem;
+        border-radius: 1rem;
+
+        &__main-image {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &__body {
+            height: unset;
+            margin-left: 0;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            padding-bottom: 0;
+            
+        }
+
+
+        &__footer {
+            border-radius: 0;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            .card__share-icon {
+                position: absolute;
+                right: 0rem;
+                background-color: $lightGrayishBlue;
+                z-index: 3;
+                &:hover {
+                    cursor: pointer;
+                    background-color: $grayishBlue;
+                }
+                &:active {
+                    background-color: $veryDarkGrayishBlue;
+                }
+            }
+
+            .card__hidden-block {
+                right: -2rem;
+                top: 0em;
+                position: absolute;
+                .card__share-block {
+                    width: 24.5rem;
+                    padding-right: 6rem;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
