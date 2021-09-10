@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0 auto;
+      max-width: 1440px;
+      background: linear-gradient(0deg, rgba(93,35,235,1) 0%, rgba(109,8,235,1) 35%, rgba(152,0,255,1) 100%);
+    }
+    .main-container {
+      margin-left: 5%;
+      margin-right: 5%;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 1440px;
+      background-color: white;
+      border: 10px solid white;
+      border-radius: 15px;
+    }
+
+    .left-container {
+      background-color: white;
+      flex: 2 2 40%;
+      align-self: center;
+    }
+
+    .left-container img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    .right-container {
+      background-color: white;
+      flex: 2 2 40%;
+    }
+
+    .right-container h3 {
+      margin-left: 10px;
+      font-size: 25px;
+    }
+
+    .attribution { 
+      font-size: 11px; 
+      text-align: center;
+      flex: 4 4 100%;
+      background-color: white;
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .faq-section-container {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-bottom: 1px black solid;
+    }
+    .question-section {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .question-section:hover {
+      cursor: pointer;
+    }
+
+    .faq-section-container img {
+      width: 10px;
+      height: 7px;
+      align-self: center;
+      margin-right: 10px;
+    }
+
+    .question {
+      user-select: none;
+    }
+
+    .answer {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .question-image {
+      
+    }
+
+    @media only screen and (max-width:700px) {
+
+      .main-container {
+        display: block;
+        min-width: 345px;
+      }
+
+    }
+
+  </style>
+
+  <script>
+
+    window.onload = function() {
+
+      let questionSections = document.getElementsByClassName("question-section");
+
+      for (let i = 0; i < questionSections.length; i++) {
+        questionSections[i].addEventListener("click", () => {
+          let answers = document.getElementsByClassName("answer")[i];
+          let questionImages = document.getElementsByClassName("question-image")[i];
+          let questions = document.getElementsByClassName("question")[i];
+
+          // reset other question sections except the current section where the mouse points at
+          for (let j = 0; j < questionSections.length;j++) {
+            if (i != j) {
+              let answers = document.getElementsByClassName("answer")[j];
+              let questionImages = document.getElementsByClassName("question-image")[j];
+              let questions = document.getElementsByClassName("question")[j];
+              
+              answers.style.display = "none";
+              questionImages.style.transform = "rotate(0deg)";
+              questions.style.fontWeight = "unset";
+            }
+          }
+
+          if (answers.style.display == "none") {
+            answers.style.display = "block";
+            questionImages.style.transform = "rotate(180deg)";
+            questions.style.fontWeight = "bold";
+          } else {
+            answers.style.display = "none";
+            questionImages.style.transform = "rotate(0deg)";
+            questions.style.fontWeight = "unset";
+          }
+
+        });
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-container">
+      <img src="images/illustration-woman-online-desktop.svg" alt="">
+
+    </div>
+  
+    <div class="right-container">
+      <h3>FAQ</h3>
+      <div class="faq-section-container">
+        <div class="question-section">
+          <div class="question">
+            How many team members can I invite?
+          </div>
+          <img class="question-image" src="images/icon-arrow-down.svg">
+        </div>
+        <div class="answer">
+            You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.
+        </div>
+      </div>
+  
+      <div class="faq-section-container">
+        <div class="question-section">
+          <div class="question">
+            What is the maximum file upload size?
+          </div>
+          <img class="question-image" src="images/icon-arrow-down.svg">
+        </div>
+        <div class="answer">
+          No more than 2GB. All files in your account must fit your allotted storage space.
+        </div>
+      </div>
+
+      <div class="faq-section-container">
+        <div class="question-section">
+          <div class="question">
+          How do I reset my password?
+          </div>
+          <img class="question-image" src="images/icon-arrow-down.svg">
+        </div>
+        <div class="answer">
+          Click “Forgot password” from the login page or “Change password” from your profile page.
+          A reset link will be emailed to you.
+        </div>
+      </div>
+
+      <div class="faq-section-container">
+        <div class="question-section">
+          <div class="question">
+            Can I cancel my subscription?
+          </div>
+          <img class="question-image" src="images/icon-arrow-down.svg">
+        </div>
+        <div class="answer">
+            Yes! Send us a message and we’ll process your request no questions asked.
+        </div>
+      </div>
+    
+      <div class="faq-section-container">
+        <div class="question-section">
+          <div class="question">
+            Do you provide additional support?
+          </div>
+          <img class="question-image" src="images/icon-arrow-down.svg">
+          
+        </div>
+        <div class="answer">
+            Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        </div>
+      </div>  
+    </div>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jason Lai</a>.
+  </div>
+
+</div>
+</body>
+</html>
