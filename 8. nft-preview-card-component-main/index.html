@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    * {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    p {
+      /* font-size: 18px; */
+    }
+
+    body {
+      background-color: hsl(217, 54%, 11%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: hsl(216, 50%, 16%);
+      width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .card__main_image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card__main_image:hover .non_active {
+      opacity: 0;
+      display: none;
+
+    }
+
+    .card__main_image .active {
+      opacity: 1;
+      display: none;
+    }
+
+    .card__main_image:hover .active {
+      opacity: 1;
+      display: block;
+    }
+
+    .card__main_image .active_eye {
+      position: absolute;
+      display: none;
+    }
+
+    .card__main_image:hover .active_eye {
+      display: block;
+      cursor: pointer;
+    }
+
+    .card__main_image img{
+      width: 250px;
+    
+    }
+
+    .card__title {
+      color: white;
+      text-align: left;
+      margin-top: 15px;
+      
+    }
+
+    .card__title:hover {
+      color: hsl(178, 100%, 50%);
+      cursor: pointer;
+    }
+
+    .card__content {
+      color: hsl(215, 51%, 70%);
+      margin-top: 15px;
+    }
+
+    .card__details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .card__price, .card__expiration_date {
+      display: flex;
+    }
+
+    .card__price {
+      color: hsl(178, 100%, 50%);
+    }
+
+    .card__expiration_date {
+      color: hsl(215, 51%, 70%);
+    }
+
+    .card__details img {
+      margin-right: 5px;
+      
+    }
+
+    hr {
+      border-color: hsl(215, 32%, 27%);
+      margin-top: 15px;
+    }
+
+    .card__footer {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .card__footer span {
+      color: hsl(215, 51%, 70%);
+    }
+
+    .card__footer img {
+      border: 1px solid white;
+      border-radius: 15px;
+      margin-right: 10px;
+    }
+
+
+
+    #author {
+      color: white;
+    }
+
+    #author:hover {
+      color:hsl(178, 100%, 50%);
+      cursor: pointer;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__main_image">
+      <img class="non_active" src="images/image-equilibrium.jpg" alt="">
+      <img class="active" src="images/image-equilibrium-active.jpg" alt="">
+      <img class="active_eye" src="images/eye-icon.png">
+    </div>
+  
+    <div class="card__title">
+      <h3>Equilibrium #3429</h3>
+    </div>
+  
+    <div class="card__content">
+      <p>Our Equilibrium collection promotes balance and calm.</p>
+    </div>
+  
+    <div class="card__details">
+      <div class="card__price">
+        <img width="11px" height="18px" src="images/icon-ethereum.svg" alt="">
+        <p>0.041 ETH</p>
+      </div>
+      
+      <div class="card__expiration_date">
+        <img width="17px" height="17px" src="images/icon-clock.svg" alt="">
+        <p>3 days left</p>  
+      </div>
+  
+    </div>
+
+    <hr>
+    
+    <div class="card__footer">
+      <img width="30px" height="30px" src="images/image-avatar.png" alt="">
+      <p><span>Creation of</span> <span id="author">Jules Wyvern</span></p>
+    </div>
+  
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jason Lai</a>.
+  </div>
+</body>
+</html>
