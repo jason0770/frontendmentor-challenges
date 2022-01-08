@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    html {
+      display: flex;
+      justify-content: center;
+    }
+
+    body {
+      background-image: url(./images/bg-desktop.svg);
+      background-color: hsl(257, 64%, 33%);
+      height: 100vh;
+      width: 800px;
+      display: flex;
+      align-items: center;
+    }
+
+    .landing-page-content {
+      display: flex;
+      margin-top: 40px;
+    }
+
+    .illustration-mockups {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .illustration-mockups img {
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .main-content {
+      width: 50%;
+    }
+
+    button {
+      padding: 10px 30px 10px 30px;
+      border-radius: 20px;
+      box-shadow: 1px 2px 1px 2px rgba(0,0,0,0.5);
+      margin-bottom: 100px;
+      color: hsl(257, 64%, 33%);
+    }
+
+    button:hover {
+      box-shadow: 2px 4px 2px 4px rgba(0,0,0,0.25);
+    }
+
+    button:active {
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: end;
+    }
+
+    .social-media img {
+      width: 24px;
+      height: 24px;
+      margin-left: 10px;
+    }
+
+    h1, p {
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    @media screen and (max-width: 375px){
+
+      body {
+        background-image: url(./images/bg-mobile.svg);
+       
+      }
+
+      .landing-page-content, .social-media {
+        display: block;
+        text-align: -webkit-center;
+      }
+
+      .logo {
+        margin-left: 30px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    class SocialMedia extends React.Component {
+      render() {
+        return (
+          <div class="social-media">
+              <span><img src="./images/facebook.png" alt=""/></span>
+              <span><img src="./images/twitter.png" alt=""/></span>
+              <span><img src="./images/instagram.png" alt=""/></span>
+          </div>
+        )
+      }
+    }
+
+    class MainContent extends React.Component {
+      render() {
+        return (
+          <div class="main-content">  
+            <h1>Build The Community Your Fans Will Love</h1>
+            <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+            Create connections with your users as you engage in genuine discussion.</p>
+            <button>Register</button>
+            <SocialMedia />
+          </div>
+        )
+      }
+    }
+
+    class IllustrationMockups extends React.Component {
+      render() {
+        return (
+          <div class="illustration-mockups">
+            <img src="./images/illustration-mockups.svg" alt=""/>
+          </div>
+        )
+      }
+    }
+
+    class LandingPageContent extends React.Component {
+      render() {
+        return (
+          <div class="landing-page-content">
+            <IllustrationMockups />
+            <MainContent />
+          </div>
+        )
+      }
+    }
+
+    class Logo extends React.Component {
+      render() {
+        return (
+          <div class="logo"><img src="./images/logo.svg" alt=""/></div>
+        )
+      }
+    }
+
+    class LandingPage extends React.Component {
+      render() {
+        return (
+          <div class="landing-page">
+            <Logo />
+            <LandingPageContent />
+          </div>
+        )
+      }
+    }
+
+
+
+    const rootElement = document.getElementById('root');
+
+    ReactDOM.render(<LandingPage />, rootElement)
+  </script>
+
+</body>
+</html>
