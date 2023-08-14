@@ -63,7 +63,7 @@ export default function SignUp() {
                     </form> 
                 </div>
                 </div>
-                <div className="w-[375px] h-[284px] bg-center bg-[url('../public/images/illustration-sign-up-desktop.svg')] max-[900px]:bg-[url('../public/images/illustration-sign-up-mobile.svg')]">
+                <div className="w-[400px] h-[570px] bg-center bg-[url('../public/images/illustration-sign-up-desktop.svg')] max-[900px]:w-[375px] max-[900px]:h-[284px] max-[900px]:bg-[url('../public/images/illustration-sign-up-mobile.svg')]">
                     
                 </div>
             
